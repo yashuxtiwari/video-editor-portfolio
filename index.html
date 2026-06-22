@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DYNAMIC EDITS — Cinematic Video Editor</title>
+<link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+  rel="stylesheet"/>
+  <link rel="shortcut icon" href="/Files/Assets/file_0000000037bc720993e9d62e4c16060a.png" type="image/x-icon">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+<div class="mouse-glow" id="mouse-glow" aria-hidden="true"></div>
+<canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+<!-- LOADING SCREEN -->
+<div id="loader" role="status" aria-label="Loading">
+  <div class="loader-logo" aria-hidden="true">Dynamic Edits</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+  <p class="loader-text">Initializing cinematic experience</p>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="#hero" class="nav-logo" aria-label="Axiom Edit Home">DYNAMIC EDITS</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#categories">Services</a></li>
+    <li><a href="#workflow">Process</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#projects" onclick="closeMobile()">Projects</a>
+  <a href="#categories" onclick="closeMobile()">Services</a>
+  <a href="#workflow" onclick="closeMobile()">Process</a>
+  <a href="#pricing" onclick="closeMobile()">Pricing</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero" aria-label="Hero section">
+  <div class="hero-bg-glow" aria-hidden="true"></div>
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+  
+  <div class="hero-content" id="main-content">
+    <div class="hero-badge">
+      <span aria-hidden="true"></span>
+      Available for Projects
+    </div>
+    <h1 class="hero-title">
+      <span class="line-1">Crafting</span>
+      <span class="line-2">Cinematic</span>
+      <span class="line-3">Stories</span>
+    </h1>
+    <p class="hero-sub">Through Motion & Visual Storytelling — Premium video editing that transforms raw footage into cinematic masterpieces that captivate audiences.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn-primary">
+        <span>View Projects</span>
+        <span aria-hidden="true">→</span>
+      </a>
+      <a href="https://wa.link/vrieda" target="_blank" class="btn-secondary">
+        <span>Hire Me</span>
+      </a>
+    </div>
+  </div>
+  
+  <div class="hero-stats" aria-label="Key statistics">
+    <div class="hero-stat">
+      <div class="num" id="stat1">0+</div>
+      <div class="label">Projects Delivered</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num" id="stat2">0+</div>
+      <div class="label">Happy Clients</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num" id="stat3">0yrs</div>
+      <div class="label">Experience</div>
+    </div>
+  </div>
+  
+  <div class="scroll-indicator" aria-hidden="true">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">Scroll</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" aria-label="About section">
+  <div class="about-visual" id="about-visual">
+    <div class="about-img-wrap">
+      <div class="about-img-inner" aria-hidden="true">
+        <span style="font-size:5rem;filter:drop-shadow(0 0 30px rgba(0,212,255,0.5))"><img src="./Assets/Profile.png.jpeg" alt="" srcset="" width="100%" loading="lazy"></span>
+      </div>
+    </div>
+    <div class="about-glow-card" aria-label="4 years experience">
+      <div class="num">4+</div>
+      <div class="lbl">Years Editing</div>
+    </div>
+  </div>
+  <div class="about-content">
+    <p class="section-label" id="about-label">About Me</p>
+    <h2 class="section-title" id="about-title">Where Art Meets<br>Technology</h2>
+    <p class="section-sub" id="about-sub">I’m Hariom Pareek, a creative video editor from India passionate about turning ideas into cinematic visuals. I specialize in smooth transitions, color grading, motion graphics, and engaging storytelling that makes content stand out.
+</p>
+    
+    <div class="about-skills" id="about-skills">
+      <div class="skill-row">
+        <span class="skill-name">Color Grading</span>
+        <div class="skill-bar"><div class="skill-fill" style="--w:100%"></div></div>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Motion Graphics</span>
+        <div class="skill-bar"><div class="skill-fill" style="--w:98%"></div></div>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Sound Design</span>
+        <div class="skill-bar"><div class="skill-fill" style="--w:97%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" aria-label="Featured projects">
+  <div class="projects-header">
+    <div>
+      <p class="section-label" id="proj-label">Portfolio</p>
+      <h2 class="section-title" id="proj-title">Featured Work</h2>
+    </div>
+    <div class="project-filters" role="group" aria-label="Filter projects">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="commercial">Commercial</button>
+      <button class="filter-btn" data-filter="music">Music Video</button>
+      <button class="filter-btn" data-filter="reel">Reel</button>
+    </div>
+  </div>
+  
+  <div class="projects-grid" id="projects-grid">
+    <div class="project-card" data-cat="commercial" tabindex="0" role="button" aria-label="Nike Motion — Commercial project">
+      <div class="project-thumb">
+        <video preload="metadata" autoplay muted loop playsinline controls>
+    <source src="./Assets/ai website v1.mp4" type="video/mp4"></div>
+      <div class="project-overlay">
+        <div class="project-category">Commercial</div>
+        <div class="project-name">Motion Graphics</div>
+      </div>
+    </div>
+    <div class="project-card" data-cat="music" tabindex="0" role="button" aria-label="Eclipse Rhythm — Music video project">
+      <div class="project-thumb"><video preload="metadata" autoplay muted loop playsinline controls>
+    <source src="./Assets/71090911aa1e393811ffdd1cc8e55617_720w (1).mp4" type="video/mp4"></div>
+      <div class="project-overlay">
+        <div class="project-category">Motion Graphics</div>
+        <div class="project-name">2026</div>
+      </div>
+    </div>
+    <div class="project-card" data-cat="reel" tabindex="0" role="button" aria-label="Cinematic Showreel project">
+      <div class="project-thumb"><video preload="metadata" autoplay muted loop playsinline controls>
+    <source src="./Assets/ae7c0f2126aca9e204d6f46d06e001b5_720w (1).mp4" type="video/mp4"></div>
+      <div class="project-overlay">
+        <div class="project-category">Showreel</div>
+        <div class="project-name">Cinematic Showreel 2026</div>
+      </div>
+    </div>
+    <div class="project-card" data-cat="commercial" tabindex="0" role="button" aria-label="Tesla Vision — Commercial project">
+      <div class="project-thumb"><video autoplay muted loop playsinline controls>
+    <source src="./Assets/e473104083fd52ee24d2d14d9e7ca690_720w (1).mp4" preload="metadata" type="video/mp4"></div>
+      <div class="project-overlay">
+        <div class="project-category">Commercial</div>
+        <div class="project-name">Vision Series</div>
+      </div>
+    </div>
+    <div class="project-card" data-cat="music" tabindex="0" role="button" aria-label="Neon Dreams — Music video project">
+      <div class="project-thumb"><video preload="metadata" autoplay muted loop playsinline controls>
+    <source src="./Assets/ai website v1.mp4"  type="video/mp4"></div>
+      <div class="project-overlay">
+        <div class="project-category">PP Video</div>
+        <div class="project-name">Neon Dreams</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section id="categories" aria-label="Video categories">
+  <div style="text-align:center;margin-bottom:1rem;">
+    <p class="section-label" id="cat-label" style="display:inline-block">Services</p>
+  </div>
+  <h2 class="section-title" id="cat-title" style="text-align:center">What I Create</h2>
+  
+  <div class="categories-grid">
+    <div class="cat-card" tabindex="0">
+      <div class="cat-icon" aria-hidden="true"><img width="64" height="64" src="https://img.icons8.com/bubbles/100/tv.png" alt="tv"/></div>
+      <div class="cat-name">Commercials</div>
+      <div class="cat-desc">High-impact brand films and advertisement edits that convert viewers into customers.</div>
+    </div>
+    <div class="cat-card" tabindex="0">
+      <div class="cat-icon" aria-hidden="true"><img width="64" height="64" src="https://img.icons8.com/liquid-glass-color/64/apple-music.png" loading="lazy"="apple-music"/></div>
+      <div class="cat-name">Music Videos</div>
+      <div class="cat-desc">Visually stunning music video productions with rhythm-driven cuts and cinematic flair.</div>
+    </div>
+    <div class="cat-card" tabindex="0">
+      <div class="cat-icon" aria-hidden="true"><img width="64" height="64" src="https://img.icons8.com/color/48/instagram-reel.png" loading="lazy" alt="instagram-reel"/></div>
+      <div class="cat-name">Reels & Trailers</div>
+      <div class="cat-desc">Powerful showreels and trailers engineered to captivate in seconds and demand attention.</div>
+    </div>
+    <div class="cat-card" tabindex="0">
+      <div class="cat-icon" aria-hidden="true"><img width="64" height="64" src="https://img.icons8.com/color/48/youtube-play.png" loading="lazy" alt="youtube-play"/></div>
+      <div class="cat-name">YouTube Editing</div>
+      <div class="cat-desc">Retention-optimized YouTube content designed to maximize watch-time and subscriber growth.</div>
+    </div>
+    <div class="cat-card" tabindex="0">
+      <div class="cat-icon" aria-hidden="true"><img width="64" height="64" src="https://img.icons8.com/color/48/youtube-shorts.png" loading="lazy" alt="youtube-shorts"/></div>
+      <div class="cat-name">Short Form</div>
+      <div class="cat-desc">Viral-ready Reels, TikToks, and Shorts crafted for maximum platform engagement.</div>
+    </div>
+    <div class="cat-card" tabindex="0">
+      <div class="cat-icon" aria-hidden="true"><img width="64" height="64" src="https://img.icons8.com/ios-glyphs/90/documentary.png" loading="lazy" alt="documentary"/></div>
+      <div class="cat-name">Documentaries</div>
+      <div class="cat-desc">Long-form storytelling with emotional depth and narrative-driven editorial decisions.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" aria-label="Client testimonials">
+  <div style="text-align:center">
+    <p class="section-label" id="testi-label" style="display:inline-block">Testimonials</p>
+    <h2 class="section-title" id="testi-title">What Clients Say</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+      <p class="testi-quote">"Axiom transformed our brand campaign into a cinematic masterpiece. The attention to rhythm, color, and storytelling was beyond anything we expected. Truly world-class work."</p>
+      <div class="testi-author">
+        <div class="testi-avatar" aria-hidden="true">MK</div>
+        <div class="testi-info">
+          <div class="name">Marcus Klein</div>
+          <div class="role">Creative Director, Pulse Studio</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+      <p class="testi-quote">"Our music video went viral with 2M views in the first week. The editing style was exactly what we needed — emotional, energetic, and visually stunning."</p>
+      <div class="testi-author">
+        <div class="testi-avatar" aria-hidden="true">SR</div>
+        <div class="testi-info">
+          <div class="name">Sofia Reyes</div>
+          <div class="role">Recording Artist, Atlantic Records</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+      <p class="testi-quote">"Our YouTube channel grew from 10K to 200K subscribers in 6 months after redesigning our content strategy with Axiom. The editing quality speaks for itself."</p>
+      <div class="testi-author">
+        <div class="testi-avatar" aria-hidden="true">JL</div>
+        <div class="testi-info">
+          <div class="name">James Liu</div>
+          <div class="role">Tech YouTuber, 200K+ Subscribers</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKFLOW -->
+<section id="workflow" aria-label="Editing workflow">
+  <div>
+    <p class="section-label" id="work-label">Process</p>
+    <h2 class="section-title" id="work-title">The Editing<br>Workflow</h2>
+    <p class="section-sub" id="work-sub">A refined creative process built over years of cinematic work, ensuring every project is delivered with excellence.</p>
+  </div>
+  <div class="timeline" role="list">
+    <div class="timeline-item" role="listitem">
+      <div class="timeline-dot" aria-hidden="true"></div>
+      <div class="timeline-step">Step 01</div>
+      <div class="timeline-title">Brief & Discovery</div>
+      <div class="timeline-desc">Deep-dive consultation to understand your vision, brand voice, target audience, and creative direction. Every great edit starts with listening.</div>
+    </div>
+    <div class="timeline-item" role="listitem">
+      <div class="timeline-dot" aria-hidden="true"></div>
+      <div class="timeline-step">Step 02</div>
+      <div class="timeline-title">Asset Review & Story Structure</div>
+      <div class="timeline-desc">Analyzing all footage, audio, and reference materials. Building the narrative architecture that will guide every editorial decision.</div>
+    </div>
+    <div class="timeline-item" role="listitem">
+      <div class="timeline-dot" aria-hidden="true"></div>
+      <div class="timeline-step">Step 03</div>
+      <div class="timeline-title">Rough Cut & Rhythm</div>
+      <div class="timeline-desc">Assembling the story skeleton — pacing, timing, and rhythm. The heartbeat of the edit gets established here.</div>
+    </div>
+    <div class="timeline-item" role="listitem">
+      <div class="timeline-dot" aria-hidden="true"></div>
+      <div class="timeline-step">Step 04</div>
+      <div class="timeline-title">Color Grade & VFX</div>
+      <div class="timeline-desc">Cinematic color grading, motion graphics, and visual effects integration that elevate the production value dramatically.</div>
+    </div>
+    <div class="timeline-item" role="listitem">
+      <div class="timeline-dot" aria-hidden="true"></div>
+      <div class="timeline-step">Step 05</div>
+      <div class="timeline-title">Final Delivery & Export</div>
+      <div class="timeline-desc">Platform-optimized exports in all required formats, with revision support and post-delivery assistance.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools" aria-label="Tools and software">
+  <div style="text-align:center">
+    <p class="section-label" id="tools-label" style="display:inline-block">Expertise</p>
+    <h2 class="section-title" id="tools-title">Tools I Master</h2>
+  </div>
+  <div class="tools-grid">
+    <div class="tool-item"><div class="tool-icon" aria-hidden="true"><img width="64" height="64" src="https://img.icons8.com/fluency/48/adobe-premiere-pro.png" alt="adobe-premiere-pro" loading="lazy"/></div><div class="tool-name">Premiere Pro</div></div>
+    <div class="tool-item"><div class="tool-icon" aria-hidden="true"><img width="64" height="64" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-after-effects-squaricons-flaticons-flat-flat-icons.png" loading="lazy" alt="external-after-effects-squaricons-flaticons-flat-flat-icons"/></div><div class="tool-name">After Effects</div></div>
+    <div class="tool-item"><div class="tool-icon" aria-hidden="true"><img width="64" height="64" src="https://img.icons8.com/plasticine/100/davinci-resolve.png" alt="davinci-resolve" loading="lazy"/></div><div class="tool-name">DaVinci Resolve</div></div>
+    <div class="tool-item"><div class="tool-icon" aria-hidden="true"><img width="64" height="64" src="https://img.icons8.com/color/48/final-cut-pro-new.png" alt="final-cut-pro-new"/ loading="lazy"></div><div class="tool-name">Final Cut Pro</div></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" aria-label="Pricing and services">
+  <div style="text-align:center">
+    <p class="section-label" id="price-label" style="display:inline-block">Pricing</p>
+    <h2 class="section-title" id="price-title">Investment Plans</h2>
+  </div>
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="pricing-tier">Starter</div>
+      <div class="pricing-price"><span class="currency">₹</span>2700</div>
+      <div class="pricing-period">per project</div>
+      <div class="pricing-divider"></div>
+      <ul class="pricing-features">
+        <li>Up to 3 min final video</li>
+        <li>Basic color correction</li>
+        <li>2 revision rounds</li>
+        <li>HD export (1080p)</li>
+        <li>5 business day turnaround</li>
+      </ul>
+      <a href="#contact" class="btn-secondary" style="width:100%;justify-content:center">Get Started</a>
+    </div>
+    <div class="pricing-card featured">
+      <div class="featured-badge">Most Popular</div>
+      <div class="pricing-tier">Cinematic</div>
+      <div class="pricing-price"><span class="currency">₹</span>9000</div>
+      <div class="pricing-period">per project</div>
+      <div class="pricing-divider"></div>
+      <ul class="pricing-features">
+        <li>Up to 10 min final video</li>
+        <li>Full cinematic color grade</li>
+        <li>Motion graphics & titles</li>
+        <li>Sound design & music sync</li>
+        <li>4 revision rounds</li>
+        <li>4K export + all formats</li>
+      </ul>
+      <a href="#contact" class="btn-primary" style="width:100%;justify-content:center">Get Started</a>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-tier">Premium</div>
+      <div class="pricing-price"><span class="currency">₹</span>10000</div>
+      <div class="pricing-period">per project</div>
+      <div class="pricing-divider"></div>
+      <ul class="pricing-features">
+        <li>Unlimited video length</li>
+        <li>Unlimited revisions</li>
+        <li>Priority delivery</li>
+        <li>Dedicated project manager</li>
+      </ul>
+      <a href="#contact" class="btn-secondary" style="width:100%;justify-content:center">Get Started</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" aria-label="Contact section">
+  <div>
+    <p class="section-label" id="contact-label">Contact</p>
+    <h2 class="section-title" id="contact-title">Start Your<br>Project</h2>
+  </div>
+  <div class="contact-wrap">
+    <div class="contact-info" id="contact-info">
+      <p style="color:var(--white-dim);line-height:1.8;margin-bottom:2.5rem;font-size:0.95rem;">Ready to bring your vision to life? Let's discuss your project and create something extraordinary together.</p>
+      <div class="contact-detail">
+        <div class="contact-icon" aria-hidden="true"><i class="ri-mail-send-line"></i></div>
+        <div>
+          <h4>Email</h4>
+          <p>pareeka714@gmail.com</p>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon" aria-hidden="true"><i class="ri-map-pin-line"></i></div>
+        <div>
+          <h4>Location</h4>
+          <p>India</p>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon" aria-hidden="true"><i class="ri-reply-line"></i></div>
+        <div>
+          <h4>Response Time</h4>
+          <p>Within 24 hours</p>
+        </div>
+      </div>
+      <div style="margin-top:2rem;">
+        <p style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--neon-cyan);margin-bottom:1rem;">Sound Signature</p>
+        <div class="soundwave" aria-hidden="true">
+          <div class="wave-bar" style="--dur:0.6s;--h:8px"></div>
+          <div class="wave-bar" style="--dur:0.8s;--h:18px"></div>
+          <div class="wave-bar" style="--dur:0.5s;--h:12px"></div>
+          <div class="wave-bar" style="--dur:0.9s;--h:22px"></div>
+          <div class="wave-bar" style="--dur:0.7s;--h:16px"></div>
+          <div class="wave-bar" style="--dur:0.6s;--h:10px"></div>
+          <div class="wave-bar" style="--dur:0.8s;--h:20px"></div>
+          <div class="wave-bar" style="--dur:0.5s;--h:14px"></div>
+          <div class="wave-bar" style="--dur:0.7s;--h:18px"></div>
+          <div class="wave-bar" style="--dur:0.6s;--h:8px"></div>
+          <div class="wave-bar" style="--dur:0.9s;--h:24px"></div>
+          <div class="wave-bar" style="--dur:0.8s;--h:12px"></div>
+        </div>
+      </div>
+    </div>
+    <form 
+  class="contact-form" 
+  id="contact-form" 
+  onsubmit="handleSubmit(event)"
+  aria-label="Contact form"
+  novalidate
+>
+
+  <div class="form-row">
+
+    <div class="form-group">
+      <label for="fname">First Name</label>
+      <input 
+        type="text"
+        id="fname"
+        name="fname"
+        placeholder="Enter Your First Name"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="lname">Last Name</label>
+      <input 
+        type="text"
+        id="lname"
+        name="lname"
+        placeholder="Enter Your Last Name"
+        required
+      >
+    </div>
+
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email Address</label>
+
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="Enter Your Email"
+      required
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="service">Service Type</label>
+
+    <select id="service" name="service" required>
+
+      <option value="" disabled selected>
+        Select a service
+      </option>
+
+      <option value="Commercial">
+        Commercial
+      </option>
+
+      <option value="Showreel">
+        Showreel
+      </option>
+
+      <option value="Music Video">
+        Music Video
+      </option>
+
+      <option value="YouTube Editing">
+        YouTube Editing
+      </option>
+
+      <option value="Short Form Content">
+        Short Form Content
+      </option>
+
+      <option value="Documentary">
+        Documentary
+      </option>
+
+    </select>
+  </div>
+
+  <div class="form-group">
+
+    <label for="budget">
+      Budget Range
+    </label>
+
+    <select id="budget" name="budget">
+
+      <option value="" disabled selected>
+        Select budget range
+      </option>
+
+      <option>
+        2000₹ – 4000₹
+      </option>
+
+      <option>
+        4000₹ – 6000₹
+      </option>
+
+      <option>
+        6000₹ – 8000₹
+      </option>
+
+      <option>
+        10000₹+
+      </option>
+
+    </select>
+
+  </div>
+
+  <div class="form-group">
+
+    <label for="message">
+      Project Details
+    </label>
+
+    <textarea
+      id="message"
+      name="message"
+      rows="5"
+      placeholder="Tell me about your project..."
+    ></textarea>
+
+  </div>
+
+  <button type="submit" class="btn-primary">
+
+    <span>
+      Send Message
+    </span>
+
+    <span aria-hidden="true">
+      →
+    </span>
+
+  </button>
+
+</form>
+
+<script src="script.js"></script
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#hero" class="nav-logo" style="font-size:1.8rem">DYANMIC EDITS</a>
+      <p>Cinematic video editing that transforms raw footage into visual stories that captivate, connect, and convert.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#categories">Services</a></li>
+        <li><a href="#workflow">Process</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#categories">Commercials</a></li>
+        <li><a href="#categories">Music Videos</a></li>
+        <li><a href="#categories">Short Form</a></li>
+        <li><a href="#categories">Documentaries</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://wa.link/vrieda" target="_blank">Hire Me</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="mailto:pareeka714@gmail.com" target="_blank">Email</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 DYNAMIC EDITS. All rights reserved.</p>
+    <div class="social-links" aria-label="Social media links">
+      <a href="https://www.instagram.com/dynamicedit7?igsh=anVmZTFqdzJsdHJr" target="_blank" class="social-link" aria-label="Instagram" ><img width="48" height="48" src="https://img.icons8.com/fluency/48/instagram-new.png" alt="instagram-new"/></a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="./index.js" defer></script>
+</body>
+</html>
